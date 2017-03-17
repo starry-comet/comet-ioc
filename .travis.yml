@@ -16,7 +16,7 @@ deploy:
 
   file_glob: true
   file:
-    - build/*
+    - build/**/*
     - package.json
 
   on:
