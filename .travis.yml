@@ -20,5 +20,5 @@ deploy:
     - package.json
 
   on:
-    tag: true
     repo: starry-comet/comet-ioc
+    tags: true
