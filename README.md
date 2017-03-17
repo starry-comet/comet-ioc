@@ -8,3 +8,136 @@
 ## Roles
 
 This project has to main goal to provide utility tools to inversify and a dynamic registration of dependencies.
+
+## Usage
+
+This project is based on [inversify](http://inversify.io).
+
+### Simple usage
+
+To understand how works this project, below there is an example.
+
+```ts
+import {inject, injectable, bootstrap} from 'comet-ioc'
+
+@injectable()
+export class A {
+  hi() {
+    console.log('hi !')
+  }
+}
+
+@injectable()
+export class B {
+  constructor(@inject(A) a: A) {
+    a.hi()
+  }
+}
+
+bootstrap(B, {
+  declarations: [
+    A
+  ]
+})
+```
+
+result:
+```
+hi !
+```
+
+### Advance usage
+
+You can also use constant or factory to provide classes, below an example:
+
+```ts
+import {inject, injectable, bootstrap, interfaces} from 'comet-ioc'
+
+const hi: symbol = Symbol('hi')
+const log: symbol = Symbol('log')
+
+@injectable()
+export class A {
+  hi() {
+    this.log(this.hi)
+  }
+
+  @inject(hi)
+  private hi: string
+
+  @inject(log)
+  private log: Function
+}
+
+@injectable()
+export class B {
+  constructor(@inject(A) a: A) {
+    a.hi()
+  }
+}
+
+bootstrap(B, {
+  declarations: [
+    A
+  ],
+
+  constants: [{
+    provide: hi,
+    useValue: 'hi !'
+  }],
+
+  providers: [{
+    provide: log,
+    useFactory(context: interfaces.Context) {
+      return console.log
+    }
+  }]
+})
+```
+
+result:
+```
+hi !
+```
+### Import / Export usage
+
+```ts
+import {inject, injectable, bootstrap} from 'comet-ioc'
+
+@injectable()
+class A {
+  hi() {
+    console.log('hi !')
+  }
+}
+
+@injectable()
+class B {
+  constructor(@inject(A) a: A) {
+    a.hi()
+  }
+}
+
+export const FakeModule: IBootstrapDependencies = {
+  declarations: [A, B]
+}
+```
+
+```ts
+import {bootstrap, injectable, inject, IBootstrapDependencies} from 'comet-ioc'
+import {FakeModule} from 'comet-ioc-fake'
+
+@injectable()
+class App {
+  constructor(@inject(A) a: A) { }
+}
+
+bootstrap(App, {
+  imports: [FakeModule]
+})
+```
+
+result:
+```
+hi !
+```

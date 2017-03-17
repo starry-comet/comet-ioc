@@ -1,2 +1,7 @@
 export * from 'inversify'
-export * from './bootstrap'
+export {
+  IBootstrapConstantDependencies,
+  IBootstrapDependencies,
+  IBootstrapDynamicProviders,
+  bootstrap
+} from './bootstrap'
