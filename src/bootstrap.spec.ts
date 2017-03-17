@@ -14,6 +14,6 @@ class App {
 
 describe('Launch bootstrap', function() {
   it('Bootstrap', function() {
-    ok(bootstrap(App, [Test]).test instanceof Test, 'Injection failed')
+    ok(bootstrap(App, {declarations: [Test]}).test instanceof Test, 'Injection failed')
   })
 })
