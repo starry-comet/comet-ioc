@@ -16,7 +16,8 @@ deploy:
 
   file_glob: true
   file:
-    - build/**/*
+    - build/src/**/*.js
+    - build/declarations/**/*.d.ts
     - package.json
 
   on:
