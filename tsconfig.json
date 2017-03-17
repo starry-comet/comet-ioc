@@ -17,7 +17,7 @@
         "charset": "utf-8",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "emitBOM": true,
+        "emitBOM": false,
         "sourceMap": false
     },
 
