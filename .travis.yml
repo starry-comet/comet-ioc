@@ -8,13 +8,16 @@ node_js:
 before_script:
   - yarn compile
 
+before_deploy:
+  - yarn pack --filename package.tgz
+
 deploy:
   provider: releases
-  skip_cleanup: true
   api_key:
     secure: N/bEH6SYwA3GDw76qlOLsh6VrQIaOx5bFcQa8FECdlJ/79GEDIH/NJwAlOnyU/z/nUoYTWXUSmtTkdGC1dZV6NUtZHeVrxECSSZhJ2XevDUueKiiIZIqbzl2zeogZoX2NVg3T81f8HysT/2oP9Xb3KBGZiMKj5rsqe4fSL5OrgL2lRXRzhLGtKYKinmrS83tTR14aSq8YktTbz3gTMPtoxdu9MCubKsZB+AZJruOaItXg4KX/4tNcBINJdDYZH2x+vrG219upaOCG8G6Fze35Ni3U/9d6+JPzvW7Ovf1pQlDLH/1E+NNrlXW9a4V4YK86Arb6VoEvIePq9tN8PoEPyqB0s0RyEBncjWqJ4RApkOIDwMxkuOlV3KZynHCI8G5DQwXSX//zfaNOKPefYvYUI/yHiM4dfsfAb3nvMsctyoSxRshyaB6mFYu44gjy3gLrhKJpKjdZQXg5SiLE/fNyE9gRvwOA9znpTtCm6E4lHn97t4Ozc1Z/8YkRWHEbFBKYOEpJJuT6NfyHK6BPoIRrZ6PkiiZGrQKzPXFiJYVJpUEPHa8DkW9xxcZwfNStQcQETjV0Vf4A7AC/lq8yLvvRgDCygob+Ws97z6WhWGTmFw+ip6dNB2ACJ9HhLj8KIfQ0MW2YYTQV5rxBJCXCKbw0wdBzyohWcKqJZ2912DLyBQ=
 
-  overwrite: true
+  skip_cleanup: true
+  file: 'package.tgz'
   on:
     repo: starry-comet/comet-ioc
     tags: true
