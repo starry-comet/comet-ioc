@@ -8,8 +8,6 @@
   "author": "Florentin DUBOIS <duboiflorentin@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "postinstall": "tsc",
-    "prepublish": "tsc",
     "compile": "tsc",
     "compile:w": "tsc -w",
     "dev": "nodemon build/src/index.js",
