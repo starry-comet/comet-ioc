@@ -129,7 +129,7 @@ import {FakeModule} from 'comet-ioc-fake'
 
 @injectable()
 class App {
-  constructor(@inject(A) a: A) { }
+  constructor(@inject(B) a: B) { }
 }
 
 bootstrap(App, {
