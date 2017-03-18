@@ -102,7 +102,7 @@ hi !
 ### Import / Export usage
 
 ```ts
-import {inject, injectable, bootstrap} from 'comet-ioc'
+import {inject, injectable, bootstrap, IBootstrapDependencies} from 'comet-ioc'
 
 @injectable()
 class A {
@@ -124,7 +124,7 @@ export const FakeModule: IBootstrapDependencies = {
 ```
 
 ```ts
-import {bootstrap, injectable, inject, IBootstrapDependencies} from 'comet-ioc'
+import {bootstrap, injectable, inject} from 'comet-ioc'
 import {FakeModule} from 'comet-ioc-fake'
 
 @injectable()
