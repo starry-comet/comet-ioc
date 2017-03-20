@@ -1,6 +1,6 @@
 {
   "name": "comet-ioc",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Inversion of control used in starry-comet projects",
   "main": "build/src/index.js",
   "types": "build/declarations/index.d.ts",
