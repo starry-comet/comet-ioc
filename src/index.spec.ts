@@ -1,25 +1,25 @@
 import { ok, equal } from 'assert'
-import { injectable, inject, bootstrap } from './index'
+import { Injectable, Inject, bootstrap } from './index'
 
-@injectable()
+@Injectable()
 class Test {}
 
-@injectable()
+@Injectable()
 class Test2 {}
 
-@injectable()
+@Injectable()
 class App {
 
-  @inject(Test)
+  @Inject(Test)
   public test: Test
 
-  @inject(Test2)
+  @Inject(Test2)
   public test2: Test2
 
-  @inject('pi')
+  @Inject('pi')
   public pi: number
 
-  @inject('e')
+  @Inject('e')
   public e: number
 }
 
