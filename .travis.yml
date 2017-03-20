@@ -15,13 +15,13 @@ deploy:
   - provider: npm
     email: contact@florentin-dubois.fr
     api_key:
-      secure: GUdEZPUVGLR+bzUe+TYQLswN9ukdz7PS8x5iA32uA17QhsP34FYs41XwQcobizh18VGK91iyQZJjjPF0mD6AD6aTzD8aEMEQs0FB1rfDotMPnZBiIlZOE/NIbdfQtcjk0vAl3/gTmOz6uK/30FnmE0KtDsfZHynGxaGvzvU7Qs7YgZO7qK5CLJn/j7imDr+9RafNhqHUCt8/5A+3zL5uRlh3FB4tliAuK77GvGjv0G1Dsc69NXck/e9O9DrfJDlJeDtBLuLxt915Q3jFKETNCSG0uuTNc5DwOn66l11YZxRAFFwX0rWtsxD19b+wMEU2aD9SSmMrShGn0LCOZxmfVmkXPLyuiC0vrghHYrfk19HONqAT5SiBGW6sGH8qihgjqqxxWwiNZEBqi+b+ztaiMEsblRtHmf91isVfmKyFQuYpn499m6s+cxHaRQUQZMK3Q8OLM2BJPfFnV0afNW0MkF8skUQbB6oq+eqjY5z0XKdBetvNR599fDC2bocSMsw92va879TsOFVxAcbmzhP3CwRmpP1AN17VZIWPiXI2s4N7dvODaLU/4RcnyvVwg4ehCydFlJeuX5/NQ/MKR7HX7R4bb7e2WvypNeky9ygfNX77g02qOVe8pJXhGCbAofdaZSBmhJGEib8WYEuN+K0hZxLssjhHu8LNmFSe2ly7GBY=
+      secure: QF1kc/q6i/8ffhAZIBBi579U5fRpcGWFVXsjeSKMJJolTuSR9gdGbPG60r1nJhW/IZRSwec93DpA9vF1n0GhYv/dy9O16LCw22+i9ZoDPC6TFcCosdPfQQARTQ//R5H07QfObwkqe+bcLrPhTM1h7vIah6i0gd/cXsJqr0MH49rMMyRlkaLcJ5ZCUg0q44qJgF0gbCACTKP4kRp7yW4HDs5CHEouzUVlP46JdHi6O2LBERwrcOb1U+VH/aweOFo4RDcB36K3ecjo/ZmQwZSbN6N6l6pbCjve63tzc1XOHmW9Yv5SfYxWA6mLdDkHf1sLCCiFfMadSMCrKUBIEY3UNE3kCCDMjKdLm5IlLlMX2Tw9oN+5055V2WyqOLZtzgHdc5iBnXXWk4183MB6vw8Sb3zMf6Cpki4U6oCvGBoDyTlmhqUzs1fOF86MG75NAOWFFPURexruFrTuQQOBfLzwnjbzLx5AZHNE7uD7Od8DefNjtS9Tt7K4YNvU7I8xMmTqRgF7OENqj+BFpOD+w64DZrOHIB4TUD2JZWfzdXVQuXXqzcQPmvW1JAeafwtg5k5YzBZYDCVZ+OFToo7CCs1lP3mvdmhvlM2e7hThCLOQ4Udl92kzDZMRxOQEzK5j8lVU7y5FgJU6HOffJYWWpkX/kb9BUeOXnWpmI/uBmaxTg6Y=
 
     skip_cleanup: true
     file: package.tgz
     on:
-      tags: true
       repo: starry-comet/comet-ioc
+      tags: true
 
   - provider: releases
     api_key:
